@@ -1,0 +1,435 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@400;700&display=swap');
+*{
+  margin:0;
+  padding:0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+:root{
+  /*===== Colors =====*/
+  --body-color:#E4E9F7;
+  --sidebar-color:#fff;
+  --primary-color:#EAE2B7;
+  --primary-color-light:#F6F5FF;
+  --toggle-color:#DDD;
+  --text-color:#707070;
+  --header-color: #D62828;
+  --button-hover:#003049;
+  --button-hover2:#001f30;
+  --other-color:#FCBF49;
+  --active-color:rgb(44, 39, 39);
+
+
+  /*===== Font weight =====*/
+  --body-font:"Poppins", sans-serif;
+  --second-font:"Lora", serif;
+  --biggest-font-size:2.25rem;
+  --normal-font-size:.938rem;
+  --small-font-size:.813rem;
+  --smalles-font-size:.613rem;
+
+  /*===== Transition  =====*/
+
+  --tran-02: all 0.2s ease;
+  --tran-03: all 0.3s ease;
+  --tran-04: all 0.4s ease;
+  --tran-05: all 0.5s ease;
+
+}
+
+.web-container{
+  height:100vh;
+  width:100vw;
+  display: flex;
+  flex-wrap: wrap;
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.733), rgba(67, 67, 67, 0.651)), url("./images/pup\ hom.jpg") ;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position:relative;
+}
+
+.includedContent{
+  margin:0;
+  width: 90%; 
+  height: 100%;
+  position:fixed;
+  top:0;
+  left:10%;
+  transition:var(--tran-03);
+  background-color:rgba(217, 217, 218, 0.856);
+  display: flex ;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+ 
+}
+.content{
+
+  position:fixed;
+  margin:0;
+  padding:0;
+  width: 90vw; 
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+ 
+ 
+}
+
+/* =================================== NAV SIDEBAR ========================================== */
+ 
+ 
+/*===== Animation ======*/
+
+@keyframes fade-in{
+  0%{
+    opacity: 0;
+  }
+  100%{
+    opacity:1;
+  }
+}
+.sidebar{
+  position:fixed;
+  left: 0;
+  height: 100vh;
+  width: 10vw;
+  margin:0;
+  background-color:var(--button-hover);
+  z-index: 10000;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar header{
+  position: relative;
+  top:7%;
+  display: flex;
+ 
+  align-items: center;  
+  justify-content: center;
+  width:100%;
+  height: 50px;
+}
+
+/*=====sidebar Font color and icon color  =====*/
+.sidebar header .logo{
+  min-width:45px; 
+  height:45px;
+  border-radius: 6px;
+}
+.sidebar .header-text{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+}
+.sidebar .header-text .name{
+  font-weight: 700;
+  color: #FCBF49;
+  font-size:24px;
+  
+ 
+}
+
+.sidebar .header-text .subname{
+  margin-top: -10px;
+  font-weight: 550;
+  color: #D62828;
+  font-size: var(--normal-font-size);
+ 
+ 
+}
+/*===== 2nd order container of nav of sidebar buttons =====*/
+.sidebar .side-button{
+  display: flex;
+  align-items: center;
+  border: none;
+  height: 7.5%;
+  width: 100%;
+  background-color:transparent;
+  cursor: pointer;
+  transition:color 0.1s linear;
+  position: relative;
+  top:30%;
+  border-top:1px solid var(--button-hover2);
+}
+
+.sidebar .side-button .icon{
+  width: 26px;
+  height: 26px;
+  margin-left: 15%;
+ 
+}
+
+.sidebar .btn-3{
+  border-bottom: 1px solid var(--button-hover2);
+}
+
+ 
+
+.sidebar .side-button .text{
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  flex-direction: column;
+  height: 100%;
+  width: 40%;
+  color:var(--primary-color);
+  .main-text{
+    font-weight:700;
+    font-size:20px;
+ 
+  }
+  .buil-text{
+    margin-top:-10%;
+    font-weight: 600;
+    color: var(--header-color);
+    font-size: 13px;
+  }
+  .pup-text{
+    font-weight:700;
+    font-size:20px;
+    height: 32px;
+    padding:0;
+    margin:0;
+    border-bottom: 3px solid var(--other-color);
+  }
+  .kiosk-text{
+    margin-top: 0;
+    font-weight:600;
+    font-size: 13px;
+  }
+  .about-text{
+    font-weight: 600;
+    font-size: 20px;
+    color:var(--primary-color);
+  }
+}
+
+ 
+ 
+/*===== Icon of every buttons, loc @ left=====*/
+.sidebar  .side-button img{
+  margin:0 10px 0 10px;
+  min-width: 10%;
+}
+ 
+.sidebar .header-text{
+  display: flex;
+  left: -5%;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+  transition: all 0.3s ease;
+}
+.sidebar .header-text .name{
+  font-weight: 700;
+  color: #FCBF49;
+  font-size: 25px;
+  transition: all 0.4s ease;
+}
+
+.sidebar .header-text .subname{
+  margin-top: -13px;
+  font-weight: 550;
+  color: #D62828;
+  font-size: 20px;
+  transition: all 0.4s ease;
+ 
+}
+
+.sidebar .side-button.active{
+  background-color: rgb(44, 39, 39);
+}
+
+/*===== pop-up info properties=====*/
+.sidebar .side-button .pop-up{
+    display: none;
+}
+ 
+ 
+/*== pop-up info property during hover event of of sidebar buttons ===*/
+.sidebar.close .side-button:hover .pop-up{
+    background-color: var(--text-color);
+    padding:5px 10px;
+    border-radius: 7px;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    white-space: nowrap;
+    position:absolute;
+    font-size: 13px;
+    left:100px;
+    width:80px;
+    height:25px;
+    color:var(--body-color);
+    animation:fade-in 0.7s;
+}
+   
+
+/*=================================================== LARGE SCREENS========================================*/
+@media all and (min-width: 600px){
+  .sidebar{
+    height: 100vh;
+    width: 10vw;
+    
+  }
+  .side-button:before{
+    content: "";
+    position:absolute;
+    right:0;
+    top:0;
+    width:100%;
+    height: 100%;
+    background: var(--button-hover2);
+    z-index: -1;
+    transition: transform 0.3s ease;
+    transform-origin: 0;
+  
+  } 
+  
+  .side-button::before{
+  transform: scaleX(0);
+  }
+  
+  .side-button:hover:before{
+    transform: scaleX(1);
+  }
+}
+/*=================================================== Wrapping content======================================*/
+@media all and (max-width: 1300px){
+  .content{
+    overflow-y: scroll;
+  }
+  .sidebar .header{
+    flex-direction: row;
+  }
+  .sidebar .header-text{
+    display: none;
+    
+  }
+  .sidebar .side-button {
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 8%;
+  }
+  .sidebar .side-button .icon{
+    margin-top: 10%;
+    margin-left: 0;
+    margin-right: 0;
+  }
+  .sidebar .side-button .text{
+ 
+    height: fit-content;
+
+    .main-text{
+      font-size:10px;
+    }
+    .buil-text{
+      font-weight: 600;
+      font-size: 8px;
+    }
+    .pup-text{
+      font-weight:700;
+      font-size:10px;
+      border: none;
+    }
+    .kiosk-text{
+      font-weight:600;
+      font-size: 8px;
+      margin-top:-40%;
+    }
+    .about-text{
+      font-weight: 600;
+      font-size: 10px;
+ 
+    }
+  }
+
+ 
+
+}
+
+
+/*=================================================== SMALL SCREENS ===========*/
+
+@media all and (max-width: 600px){
+  .sidebar{
+    bottom: 0;
+    height: 7vh;
+    width: 100vw;
+    flex-direction:row;
+    align-items: center;
+    justify-content: center;
+  }
+  .sidebar header{
+    width:20%;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    margin-right: auto;
+    display: flex;
+ 
+  }
+ .sidebar .side-button{
+    margin:0;
+    width: 15%;
+    height: 100%;
+    border: none;
+    top:0;
+ 
+  }
+  .sidebar .side-button .icon{
+    min-width: 20px;
+    min-height: 20px;
+  }
+  
+  .sidebar .side-button .text{
+    display: none;
+  }
+  .sidebar .header-text{
+    margin-top: -15px;
+    display: flex;
+    flex-direction: column;
+  }
+  .sidebar .header-text .name{
+    font-size:var(--normal-font-size);
+ 
+  }
+  .sidebar .header-text .subname{
+    font-size:var(--small-font-size);
+    margin-top: -10px;
+  }
+
+
+  .includedContent{
+    margin:0;
+    width: 100%; 
+    height: 93%;
+    position:fixed;
+    bottom:7%;
+    left:0%;
+    display: flex ;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+   
+  }
+  .content{
+    position:fixed;
+    margin:0;
+    padding:0;
+    width: 100vw; 
+    height: 100vh;
+    overflow: scroll;
+ 
+   
+   
+  }
+}

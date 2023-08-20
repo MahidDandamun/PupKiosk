@@ -1,0 +1,983 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lakbay PUP</title>
+
+
+ 
+    <link rel="stylesheet" href="generaldesign.css">
+    <link rel="stylesheet" href="about.css">
+    <link rel="stylesheet" href="PUPkiosk.css">
+    <link rel="stylesheet" href="PUPmainb.css">
+    <link rel="icon" type="image/x-icon" href="./images/LAKBAY PUP LOGO.png">
+
+    <!-- icons for buttons -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+    <!-- Font family-->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+    <!-- script-->
+ 
+    <script src="PUPmainb.js"></script>
+    <!-- Jquery-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js" charset="utf-8"></script>
+  </head>
+
+  <body>
+    <div class="web-container">
+      <!--Header-->
+ 
+      <!-- VERTICAL NAV BAR-->
+      <nav class="sidebar">
+ 
+        <header>
+          <div class="image">
+            <img class="logo" src="./images/LAKBAY PUP LOGO.png" alt="logo">
+          </div>
+          <div class="header-text">
+            <span class="name">Lakbay</span>
+            <span class="subname">PUP</span>
+          </div>
+        </header>
+ 
+ 
+
+        <button class="side-button btn-1" onclick="ClickNav(event, 'pupmainb')" id="defaultOpen">
+            <img class='icon' src="./Icons/1.png" alt="icon">
+            <div class="text">
+              <span class="main-text">MAIN</span>
+              <span class="buil-text">BUILDING</span>                  
+            </div>
+        </button>
+
+        <button class="side-button btn-2" onclick="ClickNav(event, 'pupkiosk')">
+            <img class='icon' src="./Icons/2.png" alt="icon">
+            <div class="text">
+              <span class="pup-text">PUP</span>
+              <span class="kiosk-text">KIOSK</span>                  
+            </div>
+        </button>
+ 
+        <button class="side-button btn-3" onclick="ClickNav(event, 'about')">
+              <img class='icon' src="./Icons/3.png" alt="icon" >
+              <div class="text">
+                <span class="about-text">ABOUT</span>   
+              </div>
+        </button>
+        <div></div>
+
+ 
+  
+      </nav>
+
+      <!-- MAIN CONTENT-->
+      <main>
+        <div id="includedContent" class="includedContent">
+          <div id="pupmainb" class="content">
+            <div class="svg">
+              <img src="./images/mainb.svg">
+            </div>
+            <div class="tab-title">MAIN BUILDING</div>
+       
+            <div class="content-inst">
+                <p class="p1">Click each wing</p>
+                <p class="p2">to see the offices</p>
+            </div>
+            <div class="map">
+              <img src="./images/PupBuilMap.png" id="imgsrc" alt="PUPMainmap" usemap="#PUPmainB" width="1366" height="768" loading="lazy">
+            </div>
+      
+            <map name="PUPmainB">
+      
+              <area shape="poly" class="map" id="north" coords="610,301,610,69,633,69,633,46,706,46,704,69,729,69,729,301"
+                 alt="" onmouseover="MouseOverfunction(this.id);" onmouseout="MouseOutfunction(this.id);" onclick="MouseClickfunction(this.id);">
+       
+                
+              <area shape="poly" class="map" id="south" coords="539,572,558,572,560,566,779,564,781,572,802,572,802,680,785,680,783,691,560,691,560,682,539,680,539,601,539,588" 
+                alt="" onmouseover="MouseOverfunction(this.id);" onmouseout="MouseOutfunction(this.id);" onclick="MouseClickfunction(this.id);">
+       
+                 
+              <area shape="poly" class="map" id="east" coords="691,442,767,351,942,499,929,518,946,534,898,588,883,574,865,589"
+                 alt="" onmouseover="MouseOverfunction(this.id);" onmouseout="MouseOutfunction(this.id);" onclick="MouseClickfunction(this.id);" >
+       
+       
+              <area shape="poly" class="map" id="west" coords="650,439,471,591,457,574,440,590,393,533,410,517,395,499,571,351"
+                 alt="" onmouseover="MouseOverfunction(this.id);" onmouseout="MouseOutfunction(this.id);" onclick="MouseClickfunction(this.id);">
+       
+            </map>
+            <div class="popup-mainb" id="info1">
+              North Wing
+            </div>
+            <div class="popup-mainb" id="info2">
+              South Wing 
+            </div>
+            <div class="popup-mainb" id="info3">
+              East Wing
+            </div>
+            <div class="popup-mainb" id="info4">
+              West Wing
+            </div>
+      
+          
+          <dialog class="modal" id="modsouth">      
+              <div class="left-tab">
+                <div> 
+                  <h1>FLOORS</h1>
+                  <p class="sub-text">(Select a floor)</p>
+                </div>
+       
+                <div class="buttons">
+                    <button class="tablinks" onclick="openTab(event, 'firstFloorS')" id="defaultOpenS">1st Floor</button>
+                    <button class="tablinks" onclick="openTab(event, 'secondFloorS')">2nd Floor</button>
+                    <button class="tablinks" onclick="openTab(event, 'thirdFloorS')">3rd Floor</button>
+                    <button class="tablinks" onclick="openTab(event, 'fourthFloorS')">4th Floor</button>
+                    <button class="tablinks" onclick="openTab(event, 'fifthFloorS')">5th Floor</button>
+                    <button class="tablinks" onclick="openTab(event, 'sixthFloorS')">6th Floor</button>
+                </div>
+                <button class="return-button" id="xsouth" onclick="Closefunction(this.id);">
+                  <i class='bx bx-arrow-back'></i>
+                  <p>Return </p>
+                </button>
+              </div>
+      
+              <div id="firstFloorS" class="rightTab">
+                <h1> South Wing</h1>
+                <div class="photo-grid">
+                  <div class="office-photo">
+                    <img src="./Offices/South wing/1st floor/01.jpg">
+                    <p>01</p>
+                  </div>
+                  <div class="office-photo">
+                    <img src="./Offices/South wing/1st floor/Public Assistance _ Complaint Desk.jpg">
+                    <p>Public Assistance & Complaint Desk</p>
+                  </div>
+                  <div class="office-photo">
+                    <img src="./Offices/South wing/1st floor/Pumping Station.jpg">
+                    <p>Pumping Station</p>
+                  </div>
+                  <div class="office-photo">
+                    <img src="./Offices/South wing/1st floor/Registrar.jpg">
+                    <p>Registrar</p>
+                  </div>
+                  <div class="office-photo">
+                    <img src="./Offices/South wing/1st floor/S-101.jpg">
+                    <p>S-101</p>
+                  </div>
+                  <div class="office-photo">
+                    <img src="./Offices/South wing/1st floor/S-103.jpg">
+                    <p>S-103</p>
+                  </div>
+                  <div class="office-photo">
+                    <img src="./Offices/South wing/1st floor/S-106.jpg">
+                    <p>S-106</p>
+                  </div>
+                  <div class="office-photo">
+                    <img src="./Offices/South wing/1st floor/S-109.jpg">
+                    <p>S-109</p>
+                  </div>
+                  <div class="office-photo">
+                    <img src="./Offices/South wing/1st floor/Cashier.jpg">
+                    <p>Cashier</p>
+                  </div>
+                </div>
+              </div>
+              
+              <div id="secondFloorS" class="rightTab">
+                <h1> South Wing</h1>
+                <div class="photo-grid">
+                  <div class="office-photo">
+                    <img src="./Offices/South wing/2nd floor/02.jpg">
+                    <p>02</p>
+                  </div>
+                  <div class="office-photo">
+                    <img src="./Offices/South wing/2nd floor/002.jpg">
+                    <p>002</p>
+                  </div>
+                  <div class="office-photo">
+                    <img src="./Offices/South wing/2nd floor/201.jpg">
+                    <p>201</p>
+                  </div>
+                  <div class="office-photo">
+                    <img src="./Offices/South wing/2nd floor/203.jpg">
+                    <p>203</p>
+                  </div>
+                  <div class="office-photo">
+                    <img src="./Offices/South wing/2nd floor/204.jpg">
+                    <p>204</p>
+                  </div>
+                  <div class="office-photo">
+                    <img src="./Offices/South wing/2nd floor/205.jpg">
+                    <p>205</p>
+                  </div>
+                  <div class="office-photo">
+                    <img src="./Offices/South wing/2nd floor/206.jpg">
+                    <p>206</p>
+                  </div>
+                  <div class="office-photo">
+                    <img src="./Offices/South wing/2nd floor/208.jpg">
+                    <p>208</p>
+                  </div>
+                  <div class="office-photo">
+                    <img src="./Offices/South wing/2nd floor/209.jpg">
+                    <p>209</p>
+                  </div>
+                  <div class="office-photo">
+                    <img src="./Offices/South wing/2nd floor/210.jpg">
+                    <p>210</p>
+                  </div>
+                </div>
+              </div>
+      
+              <div id="thirdFloorS" class="rightTab">
+                <h1> South Wing</h1>
+                <div class="photo-grid">
+                  <div class="office-photo">
+                    <img src="./Offices/South wing/3rd floor/03.jpg">
+                    <p>03</p>
+                  </div>
+                  <div class="office-photo">
+                    <img src="./Offices/South wing/3rd floor/302.jpg">
+                    <p>302</p>
+                  </div>
+                  <div class="office-photo">
+                    <img src="./Offices/South wing/3rd floor/303.jpg">
+                    <p>303</p>
+                  </div>
+                  <div class="office-photo">
+                    <img src="./Offices/South wing/3rd floor/304.jpg">
+                    <p>305</p>
+                  </div>
+                  <div class="office-photo">
+                    <img src="./Offices/South wing/3rd floor/309.jpg">
+                    <p>309</p>
+                  </div>
+                  <div class="office-photo">
+                    <img src="./Offices/South wing/3rd floor/311.jpg">
+                    <p>311</p>
+                  </div>
+                  <div class="office-photo">
+                    <img src="./Offices/South wing/3rd floor/312.jpg">
+                    <p>312</p>
+                  </div>
+                  <div class="office-photo">
+                    <img src="./Offices/South wing/3rd floor/314.jpg">
+                    <p>314</p>
+                  </div>
+                  
+                </div>
+              </div>
+      
+              <div id="fourthFloorS" class="rightTab">
+                <h1> South Wing</h1>
+                <div class="photo-grid">
+       
+                  <div class="office-photo">
+                    <img src="./Offices/South wing/4th floor/401.jpg">
+                    <p>401</p>
+                  </div>
+                  <div class="office-photo">
+                    <img src="./Offices/South wing/4th floor/402.jpg">
+                    <p>402</p>
+                  </div>
+                  <div class="office-photo">
+                    <img src="./Offices/South wing/4th floor/403.jpg">
+                    <p>403</p>
+                  </div>
+                  <div class="office-photo">
+                    <img src="./Offices/South wing/4th floor/404.jpg">
+                    <p>404</p>
+                  </div>
+                  <div class="office-photo">
+                    <img src="./Offices/South wing/4th floor/405.jpg">
+                    <p>405</p>
+                  </div>
+                  <div class="office-photo">
+                    <img src="./Offices/South wing/4th floor/407.jpg">
+                    <p>407</p>
+                  </div>
+                  <div class="office-photo">
+                    <img src="./Offices/South wing/4th floor/420-421.jpg">
+                    <p>420-421</p>
+                  </div>
+                </div>
+              </div>
+      
+              <div id="fifthFloorS" class="rightTab">
+                <h1> South Wing</h1>
+                <div class="photo-grid">
+                  
+                  <div class="office-photo">            
+                    <img src="./Offices/South wing/5th floor/05-min.jpg">
+                    <p>05</p>
+                  </div>
+                  <div class="office-photo">
+                    <img src="./Offices/South wing/5th floor/506-min.jpg">
+                    <p>506</p>
+                  </div>
+                  <div class="office-photo">
+                    <img src="./Offices/South wing/5th floor/512-min.jpg">
+                    <p>512</p>
+                  </div>
+                  <div class="office-photo">
+                    <img src="./Offices/South wing/5th floor/514-min.jpg">
+                    <p>514</p>
+                  </div>
+                  <div class="office-photo">
+                    <img src="./Offices/South wing/5th floor/516-min.jpg">
+                    <p>516</p>
+                  </div>
+                  <div class="office-photo">
+                    <img src="./Offices/South wing/5th floor/518-min.jpg">
+                    <p>518</p>
+                  </div>
+       
+                </div>
+              </div>
+      
+              <div id="sixthFloorS" class="rightTab">
+                <h1> South Wing</h1>
+                <div class="photo-grid">
+                  <div class="office-photo">
+                    <img src="./Offices/South wing/6th floor/06-min.jpg">
+                    <p>06</p>
+                  </div>
+                  <div class="office-photo">
+                    <img src="./Offices/South wing/6th floor/601-min.jpg">
+                    <p>601</p>
+                  </div>
+                  <div class="office-photo">
+                    <img src="./Offices/South wing/6th floor/602-min.jpg">
+                    <p>602</p>
+                  </div>
+                  <div class="office-photo">
+                    <img src="./Offices/South wing/6th floor/603-min.jpg">
+                    <p>603</p>
+                  </div>
+                  <div class="office-photo">
+                    <img src="./Offices/South wing/6th floor/604-min.jpg">
+                    <p>604</p>
+                  </div>
+                  <div class="office-photo">
+                    <img src="./Offices/South wing/6th floor/605-min.jpg">
+                    <p>605</p>
+                  </div>
+                  <div class="office-photo">
+                    <img src="./Offices/South wing/6th floor/607-min.jpg">
+                    <p>607</p>
+                  </div>
+                </div>
+              </div>
+       
+       
+          </dialog>
+       
+          <dialog class="modal" id="modnorth">
+      
+            <div class="left-tab">
+              <button class="return-button" id="xnorth" onclick="Closefunction(this.id);">
+                <i class='bx bx-arrow-back'></i>
+                <p>Return </p>
+              </button>
+              <p class="note">This building is under construction</p>
+            </div>
+          </dialog>
+          <dialog class="modal" id="modeast">
+            <div class="left-tab">
+              <div> 
+                <h1>FLOORS</h1>
+                <p class="sub-text">(Select a floor)</p>
+              </div>
+              <div class="buttons">
+                  <button class="tablinks" onclick="openTab(event, 'firstFloorE')" id="defaultOpenE">1st Floor</button>
+                  <button class="tablinks" onclick="openTab(event, 'secondFloorE')">2nd Floor</button>
+                  <button class="tablinks" onclick="openTab(event, 'thirdFloorE')">3rd Floor</button>
+                  <button class="tablinks" onclick="openTab(event, 'fourthFloorE')">4th Floor</button>
+                  <button class="tablinks" onclick="openTab(event, 'fifthFloorE')">5th Floor</button>
+                  <button class="tablinks" onclick="openTab(event, 'sixthFloorE')">6th Floor</button>
+              </div>
+              <button class="return-button" id="xeast" onclick="Closefunction(this.id);">
+                <i class='bx bx-arrow-back'></i>
+                <p>Return </p>
+              </button>
+            </div>
+      
+            <div id="firstFloorE" class="rightTab">
+              <h1> East Wing</h1>
+              <div class="photo-grid">
+                <div class="office-photo">
+                  <img src="./Offices/South wing/test image.jpg">
+                  <p>Sample text</p>
+                </div>
+                <div class="office-photo">
+                  <img src="./Offices/South wing/test image.jpg">
+                  <p>Sample text</p>
+                </div>
+                <div class="office-photo">
+                  <img src="./Offices/South wing/test image.jpg">
+                  <p>Sample text</p>
+                </div>
+                <div class="office-photo">
+                  <img src="./Offices/South wing/test image.jpg">
+                  <p>Sample text</p>
+                </div>
+                <div class="office-photo">
+                  <img src="./Offices/South wing/test image.jpg">
+                  <p>Sample text</p>
+                </div>
+                <div class="office-photo">
+                  <img src="./Offices/South wing/test image.jpg">
+                  <p>Sample text</p>
+                </div>
+                <div class="office-photo">
+                  <img src="./Offices/South wing/test image.jpg">
+                  <p>Sample text</p>
+                </div>
+              </div>
+            </div>
+            
+            <div id="secondFloorE" class="rightTab">
+              <h1> East Wing</h1>
+              <div class="photo-grid">
+                <div class="office-photo">
+                  <img src="./Offices/South wing/test image.jpg">
+                  <p>Sample text</p>
+                </div>
+                <div class="office-photo">
+                  <img src="./Offices/South wing/test image.jpg">
+                  <p>Sample text</p>
+                </div>
+                <div class="office-photo">
+                  <img src="./Offices/South wing/test image.jpg">
+                  <p>Sample text</p>
+                </div>
+                <div class="office-photo">
+                  <img src="./Offices/South wing/test image.jpg">
+                  <p>Sample text</p>
+                </div>
+                <div class="office-photo">
+                  <img src="./Offices/South wing/test image.jpg">
+                  <p>Sample text</p>
+                </div>
+                <div class="office-photo">
+                  <img src="./Offices/South wing/test image.jpg">
+                  <p>Sample text</p>
+                </div>
+                <div class="office-photo">
+                  <img src="./Offices/South wing/test image.jpg">
+                  <p>Sample text</p>
+                </div>
+              </div>
+            </div>
+      
+            <div id="thirdFloorE" class="rightTab">
+              <h1> East Wing</h1>
+              <div class="photo-grid">
+                <div class="office-photo">
+                  <img src="./Offices/South wing/test image.jpg">
+                  <p>Sample text</p>
+                </div>
+                <div class="office-photo">
+                  <img src="./Offices/South wing/test image.jpg">
+                  <p>Sample text</p>
+                </div>
+                <div class="office-photo">
+                  <img src="./Offices/South wing/test image.jpg">
+                  <p>Sample text</p>
+                </div>
+                <div class="office-photo">
+                  <img src="./Offices/South wing/test image.jpg">
+                  <p>Sample text</p>
+                </div>
+                <div class="office-photo">
+                  <img src="./Offices/South wing/test image.jpg">
+                  <p>Sample text</p>
+                </div>
+                <div class="office-photo">
+                  <img src="./Offices/South wing/test image.jpg">
+                  <p>Sample text</p>
+                </div>
+                <div class="office-photo">
+                  <img src="./Offices/South wing/test image.jpg">
+                  <p>Sample text</p>
+                </div>
+              </div>
+            </div>
+      
+            <div id="fourthFloorE" class="rightTab">
+              <h1>East Wing</h1>
+              <div class="photo-grid">
+                <div class="office-photo">
+                  <img src="./Offices/South wing/test image.jpg">
+                  <p>Sample text</p>
+                </div>
+                <div class="office-photo">
+                  <img src="./Offices/South wing/test image.jpg">
+                  <p>Sample text</p>
+                </div>
+                <div class="office-photo">
+                  <img src="./Offices/South wing/test image.jpg">
+                  <p>Sample text</p>
+                </div>
+                <div class="office-photo">
+                  <img src="./Offices/South wing/test image.jpg">
+                  <p>Sample text</p>
+                </div>
+                <div class="office-photo">
+                  <img src="./Offices/South wing/test image.jpg">
+                  <p>Sample text</p>
+                </div>
+                <div class="office-photo">
+                  <img src="./Offices/South wing/test image.jpg">
+                  <p>Sample text</p>
+                </div>
+                <div class="office-photo">
+                  <img src="./Offices/South wing/test image.jpg">
+                  <p>Sample text</p>
+                </div>
+              </div>
+            </div>
+      
+            <div id="fifthFloorE" class="rightTab">
+              <h1>East Wing</h1>
+              <div class="photo-grid">
+                <div class="office-photo">
+                  <img src="./Offices/South wing/test image.jpg">
+                  <p>Sample text</p>
+                </div>
+                <div class="office-photo">
+                  <img src="./Offices/South wing/test image.jpg">
+                  <p>Sample text</p>
+                </div>
+                <div class="office-photo">
+                  <img src="./Offices/South wing/test image.jpg">
+                  <p>Sample text</p>
+                </div>
+                <div class="office-photo">
+                  <img src="./Offices/South wing/test image.jpg">
+                  <p>Sample text</p>
+                </div>
+                <div class="office-photo">
+                  <img src="./Offices/South wing/test image.jpg">
+                  <p>Sample text</p>
+                </div>
+                <div class="office-photo">
+                  <img src="./Offices/South wing/test image.jpg">
+                  <p>Sample text</p>
+                </div>
+                <div class="office-photo">
+                  <img src="./Offices/South wing/test image.jpg">
+                  <p>Sample text</p>
+                </div>
+              </div>
+            </div>
+      
+            <div id="sixthFloorE" class="rightTab">
+              <h1>East Wing</h1>
+              <div class="photo-grid">
+                <div class="office-photo">
+                  <img src="./Offices/South wing/test image.jpg">
+                  <p>Sample text</p>
+                </div>
+                <div class="office-photo">
+                  <img src="./Offices/South wing/test image.jpg">
+                  <p>Sample text</p>
+                </div>
+                <div class="office-photo">
+                  <img src="./Offices/South wing/test image.jpg">
+                  <p>Sample text</p>
+                </div>
+                <div class="office-photo">
+                  <img src="./Offices/South wing/test image.jpg">
+                  <p>Sample text</p>
+                </div>
+                <div class="office-photo">
+                  <img src="./Offices/South wing/test image.jpg">
+                  <p>Sample text</p>
+                </div>
+                <div class="office-photo">
+                  <img src="./Offices/South wing/test image.jpg">
+                  <p>Sample text</p>
+                </div>
+                <div class="office-photo">
+                  <img src="./Offices/South wing/test image.jpg">
+                  <p>Sample text</p>
+                </div>
+              </div>
+            </div>
+       
+          </dialog>
+          <dialog class="modal" id="modwest">
+            <div class="left-tab">
+              <div> 
+                <h1>FLOORS</h1>
+                <p class="sub-text">(Select a floor)</p>
+              </div>
+              <div class="buttons">
+                  <button class="tablinks" onclick="openTab(event, 'firstFloorW')" id="defaultOpenW">1st Floor</button>
+                  <button class="tablinks" onclick="openTab(event, 'secondFloorW')">2nd Floor</button>
+                  <button class="tablinks" onclick="openTab(event, 'thirdFloorW')">3rd Floor</button>
+                  <button class="tablinks" onclick="openTab(event, 'fourthFloorW')">4th Floor</button>
+                  <button class="tablinks" onclick="openTab(event, 'fifthFloorW')">5th Floor</button>
+                  <button class="tablinks" onclick="openTab(event, 'sixthFloorW')">6th Floor</button>
+              </div>
+              <button class="return-button" id="xwest" onclick="Closefunction(this.id);">
+                <i class='bx bx-arrow-back'></i>
+                <p>Return </p>
+              </button>
+            </div>
+      
+            <div id="firstFloorW" class="rightTab">
+              <h1> West Wing</h1>
+              <div class="photo-grid">
+                <div class="office-photo">
+                  <img src="./Offices/South wing/test image.jpg">
+                  <p>Sample text</p>
+                </div>
+                <div class="office-photo">
+                  <img src="./Offices/South wing/test image.jpg">
+                  <p>Sample text</p>
+                </div>
+                <div class="office-photo">
+                  <img src="./Offices/South wing/test image.jpg">
+                  <p>Sample text</p>
+                </div>
+                <div class="office-photo">
+                  <img src="./Offices/South wing/test image.jpg">
+                  <p>Sample text</p>
+                </div>
+                <div class="office-photo">
+                  <img src="./Offices/South wing/test image.jpg">
+                  <p>Sample text</p>
+                </div>
+                <div class="office-photo">
+                  <img src="./Offices/South wing/test image.jpg">
+                  <p>Sample text</p>
+                </div>
+                <div class="office-photo">
+                  <img src="./Offices/South wing/test image.jpg">
+                  <p>Sample text</p>
+                </div>
+              </div>
+            </div>
+            
+            <div id="secondFloorW" class="rightTab" >
+              <h1> West Wing</h1>
+              <div class="photo-grid">
+                <div class="office-photo">
+                  <img src="./Offices/South wing/test image.jpg">
+                  <p>Sample text</p>
+                </div>
+                <div class="office-photo">
+                  <img src="./Offices/South wing/test image.jpg">
+                  <p>Sample text</p>
+                </div>
+                <div class="office-photo">
+                  <img src="./Offices/South wing/test image.jpg">
+                  <p>Sample text</p>
+                </div>
+                <div class="office-photo">
+                  <img src="./Offices/South wing/test image.jpg">
+                  <p>Sample text</p>
+                </div>
+                <div class="office-photo">
+                  <img src="./Offices/South wing/test image.jpg">
+                  <p>Sample text</p>
+                </div>
+                <div class="office-photo">
+                  <img src="./Offices/South wing/test image.jpg">
+                  <p>Sample text</p>
+                </div>
+                <div class="office-photo">
+                  <img src="./Offices/South wing/test image.jpg">
+                  <p>Sample text</p>
+                </div>
+              </div>
+            </div>
+      
+            <div id="thirdFloorW" class="rightTab">
+              <h1> West Wing</h1>
+              <div class="photo-grid">
+                <div class="office-photo">
+                  <img src="./Offices/South wing/test image.jpg">
+                  <p>Sample text</p>
+                </div>
+                <div class="office-photo">
+                  <img src="./Offices/South wing/test image.jpg">
+                  <p>Sample text</p>
+                </div>
+                <div class="office-photo">
+                  <img src="./Offices/South wing/test image.jpg">
+                  <p>Sample text</p>
+                </div>
+                <div class="office-photo">
+                  <img src="./Offices/South wing/test image.jpg">
+                  <p>Sample text</p>
+                </div>
+                <div class="office-photo">
+                  <img src="./Offices/South wing/test image.jpg">
+                  <p>Sample text</p>
+                </div>
+                <div class="office-photo">
+                  <img src="./Offices/South wing/test image.jpg">
+                  <p>Sample text</p>
+                </div>
+                <div class="office-photo">
+                  <img src="./Offices/South wing/test image.jpg">
+                  <p>Sample text</p>
+                </div>
+              </div>
+            </div>
+      
+            <div id="fourthFloorW" class="rightTab" >
+              <h1> West Wing</h1>
+              <div class="photo-grid">
+                <div class="office-photo">
+                  <img src="./Offices/South wing/test image.jpg">
+                  <p>Sample text</p>
+                </div>
+                <div class="office-photo">
+                  <img src="./Offices/South wing/test image.jpg">
+                  <p>Sample text</p>
+                </div>
+                <div class="office-photo">
+                  <img src="./Offices/South wing/test image.jpg">
+                  <p>Sample text</p>
+                </div>
+                <div class="office-photo">
+                  <img src="./Offices/South wing/test image.jpg">
+                  <p>Sample text</p>
+                </div>
+                <div class="office-photo">
+                  <img src="./Offices/South wing/test image.jpg">
+                  <p>Sample text</p>
+                </div>
+                <div class="office-photo">
+                  <img src="./Offices/South wing/test image.jpg">
+                  <p>Sample text</p>
+                </div>
+                <div class="office-photo">
+                  <img src="./Offices/South wing/test image.jpg">
+                  <p>Sample text</p>
+                </div>
+              </div>
+            </div>
+      
+            <div id="fifthFloorW" class="rightTab">
+              <h1> West Wing</h1>
+              <div class="photo-grid">
+                <div class="office-photo">
+                  <img src="./Offices/South wing/test image.jpg">
+                  <p>Sample text</p>
+                </div>
+                <div class="office-photo">
+                  <img src="./Offices/South wing/test image.jpg">
+                  <p>Sample text</p>
+                </div>
+                <div class="office-photo">
+                  <img src="./Offices/South wing/test image.jpg">
+                  <p>Sample text</p>
+                </div>
+                <div class="office-photo">
+                  <img src="./Offices/South wing/test image.jpg">
+                  <p>Sample text</p>
+                </div>
+                <div class="office-photo">
+                  <img src="./Offices/South wing/test image.jpg">
+                  <p>Sample text</p>
+                </div>
+                <div class="office-photo">
+                  <img src="./Offices/South wing/test image.jpg">
+                  <p>Sample text</p>
+                </div>
+                <div class="office-photo">
+                  <img src="./Offices/South wing/test image.jpg">
+                  <p>Sample text</p>
+                </div>
+              </div>
+            </div>
+      
+            <div id="sixthFloorW" class="rightTab" >
+              <h1> West Wing</h1>
+              <div class="photo-grid">
+                <div class="office-photo">
+                  <img src="./Offices/South wing/test image.jpg">
+                  <p>Sample text</p>
+                </div>
+                <div class="office-photo">
+                  <img src="./Offices/South wing/test image.jpg">
+                  <p>Sample text</p>
+                </div>
+                <div class="office-photo">
+                  <img src="./Offices/South wing/test image.jpg">
+                  <p>Sample text</p>
+                </div>
+                <div class="office-photo">
+                  <img src="./Offices/South wing/test image.jpg">
+                  <p>Sample text</p>
+                </div>
+                <div class="office-photo">
+                  <img src="./Offices/South wing/test image.jpg">
+                  <p>Sample text</p>
+                </div>
+                <div class="office-photo">
+                  <img src="./Offices/South wing/test image.jpg">
+                  <p>Sample text</p>
+                </div>
+                <div class="office-photo">
+                  <img src="./Offices/South wing/test image.jpg">
+                  <p>Sample text</p>
+                </div>
+              </div>
+            </div>
+       
+          </dialog>
+          </div>
+
+
+          <div id="pupkiosk" class="content">
+            <div class="instruction">
+              <p>
+                 Click the buildings on the map.
+              </p>
+            </div>
+            <div class="kiosk-title">PUP KIOSK</div>
+ 
+            <div class="svg-kiosk">
+              <img src="./images/svgkiosk3.svg">
+            </div>
+             
+            <img class="mapkiosk" src="./images/main.gif" id="imgsrc" alt="PUPMainmap" usemap="#PUPMap" width="2434" height="1459">
+            <map name="#PUPMap">
+              <area alt="Oval" coords="1613,1388,1524,1220,1712,885,1944,679,2103,718,2193,862,2081,1139,1884,1395,1756,1441,1679,1424" shape="poly" id="1" onclick="showDialogue(this.id, this.alt);">
+              <area alt="Chappel" coords="1271,1207,164" shape="circle" id="2" onclick="showDialogue(this.id, this.alt);">
+              <area alt="Nutrition and Food Science Building" coords="1064,1405,1428,1457" shape="rect"  id="3" onclick="showDialogue(this.id, this.alt);">
+              <area alt="Mabini monument" coords="1409,553,52" shape="circle"  id="4" onclick="showDialogue(this.id, this.alt);">
+              <area alt="Apolinario Mabini Shrine" coords="1520,875,1426,825,1522,640,1634,722" shape="poly"  id="5" onclick="showDialogue(this.id, this.alt);">
+              <area alt="Gymnasium" coords="1656,248,1668,63,1969,89,1952,269" shape="poly"  id="6" onclick="showDialogue(this.id, this.alt);">
+              <area alt="Swimming Pool" coords="1362,87,1602,237" shape="rect"  id="7" onclick="showDialogue(this.id, this.alt);">
+              <area alt="Outdoor B and V court" coords="1499,308,1490,449,1705,458,1716,314" shape="poly"  id="8" onclick="showDialogue(this.id, this.alt);">
+              <area alt="Tennis Court" coords="1761,325,1744,456,1928,471,1932,334" shape="poly"  id="9" onclick="showDialogue(this.id, this.alt);">
+              <area alt="Grand stand" coords="1580,941,1611,859,1679,795,1718,812,1653,921,1602,971" shape="poly"  id="10" onclick="showDialogue(this.id, this.alt);">
+              <area alt="Tahanan ng alumni" coords="1293,194,1301,95,1336,99,1331,198" shape="poly"  id="12" onclick="showDialogue(this.id, this.alt);">
+              <area alt="Physical Education building" coords="1205,345,1220,29,1282,29,1274,355" shape="poly"  id="13" onclick="showDialogue(this.id, this.alt);">
+              <area alt="Pasig River" coords="-1,1,-1,1452,653,1452,239,207,99,3" shape="poly"  id="15" onclick="showDialogue(this.id, this.alt);">
+              <area alt="Linear Park" coords="275,236,525,1008,690,1285,617,1311,516,1027,273,258" shape="poly"  id="16" onclick="showDialogue(this.id, this.alt);">
+              <area alt="PUP ferry station" coords="643,1386,682,1358,710,1429,679,1438,660,1429" shape="poly"  id="17" onclick="showDialogue(this.id, this.alt);">
+              <area alt="Lab High" coords="447,17,314,234,353,322,759,550,787,499,656,127" shape="poly"  id="18" onclick="showDialogue(this.id, this.alt);">
+              <area alt="Charlie Del Rosario" coords="462,404,415,490,675,647,725,561" shape="poly"  id="19" onclick="showDialogue(this.id, this.alt);">
+              <area alt="PUP MAIN BUILDING" coords="574,1044,785,1414,1023,1412,1051,1371,1045,1100,1069,1055,1307,918,1316,872,1266,795,1234,793,1000,920,948,930,667,759,587,905,677,971,606,1014" shape="poly"  id="20" onclick="showDialogue(this.id, this.alt);">
+              <area alt="Ampitheater" coords="931,817,980,823,1023,810,989,735,946,741,890,748" shape="poly"  id="21" onclick="showDialogue(this.id, this.alt);">
+              <area alt="Ninoy Aquino Library" coords="957,531,1041,499,980,318,1152,258,1120,168,944,223,888,28,781,67" shape="poly"  id="22" onclick="showDialogue(this.id, this.alt);">
+              <area alt="Freedom Park" coords="1436,664,1481,651,1393,849,1355,918,1258,752,1346,658,1398,670" shape="poly"  id="23" onclick="showDialogue(this.id, this.alt);">
+              <area alt="Lagoon" coords="1054,690,1112,615,1187,471,1203,426,1122,357,1062,393,1059,527,981,540,944,578,946,679,879,690,875,741,996,724" shape="poly"  id="24" onclick="showDialogue(this.id, this.alt);">
+              <area alt="Main Gate" coords="2119,575,2115,618,2231,631,2210,573" shape="poly"  id="26" onclick="showDialogue(this.id, this.alt);">
+              <area alt="Pylon" coords="2131,496,2191,494,2191,557,2137,554" shape="poly"  id="27" onclick="showDialogue(this.id, this.alt);">
+              <area alt=" Canteen Sampaguita Building" coords="518,670,471,728,495,763,520,776,591,793,626,743" shape="poly"  id="28" onclick="showDialogue(this.id, this.alt);">
+              <area alt="Student Canteen" coords="624,713,553,681,587,615,660,666" shape="poly"  id="29" onclick="showDialogue(this.id, this.alt);">
+              <area alt="Rc Water Tank" coords="757,168,37" shape="circle"  id="30" onclick="showDialogue(this.id, this.alt);">
+              <area alt="Railway Track" coords="2307,6,2335,2,2370,1010,2303,1457,2284,1450,2344,1010,2327,612" shape="poly" id="31" onclick="showDialogue(this.id, this.alt);">
+              <area alt="Property Building" coords="209,2,344,6,348,41,314,60,249,60,209,34" shape="poly" id="32" onclick="showDialogue(this.id, this.alt);">
+              <area alt="Gazebo" coords="1649,632,1645,651,1671,651,1677,632" shape="poly" id="34" onclick="showDialogue(this.id, this.alt);">
+            </map> 
+
+            <dialog class="modalkiosk">
+              <button class="return-button" onclick="Closemodal();">
+                <i class='bx bx-arrow-back'></i>
+                <p>Return </p>
+              </button>
+              <div class="image">
+                <img id="image" src="" loading="lazy">
+              </div>
+        
+              <div class="place-name">
+                <p id="pname">
+                  Sample text
+                <p>
+              </div>
+        
+            </dialog>
+          </div>
+
+
+          <div id="about" class="content">
+            <div class="about-container">
+              <p class="title">ABOUT </p>
+              <p class="paragraph">
+                Good day! This small project was created in order to help everyone familiarize themselves with the offices around the PUP main building.
+                Furthermore, the creators of this project aim to provide a kiosk map of the PUP main.
+              </p>
+       
+            </div>
+       
+     
+            <div class="ourteam">
+              <h1>Our Team</h1>
+              <div class="team">
+                <ul class="auto-grid" role="list">
+                  <li>
+                    <a class="profile">
+                      <h2 class="profile__name">Maria Alexandra Catarining</h2>
+                      <p>Leader</p>
+                      <img alt="Maria Alexandra Catarining" src="creators/Alexandra.jpg">
+                    </a>
+                  </li>
+                  <li>
+                    <a class="profile">
+                      <h2 class="profile__name">Christine Barbacena</h2>
+                      <p>Programmer</p>
+                      <img alt="Christine Barbacena" src="creators/Christine.jpg">
+                    </a>
+                  </li>
+                  <li>
+                    <a class="profile">
+                      <h2 class="profile__name">Mahid Dandamun</h2>
+                      <p>Programmer</p>
+                      <img alt="Mahid Dandamun" src="creators/mahid.png">
+                    </a>
+                  </li>
+                  <li>
+                    <a class="profile">
+                      <h2 class="profile__name">Miguel Alfonso Neri</h2>
+                      <p>Designer</p>
+                      <img alt="Miguel Alfonso Neri" src="creators/miguel.jpg">
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </article>
+            </div>
+
+          </div>
+        </div>
+      </main>
+    </div>
+ 
+
+    <script>        
+      function ClickNav(evt, tab) {
+        var i, tabcontent, tablinks;
+        tabcontent = document.getElementsByClassName("content");
+        for (i = 0; i < tabcontent.length; i++) {
+          tabcontent[i].style.display = "none";
+        }
+        tablinks = document.getElementsByClassName("side-button");
+        for (i = 0; i < tablinks.length; i++) {
+          tablinks[i].className = tablinks[i].className.replace(" active", "");
+        }
+        document.getElementById(tab).style.display = "block";
+        evt.currentTarget.className += " active";
+      }
+
+      // Get the element with id="defaultOpen" and click on it
+      document.getElementById("defaultOpen").click();
+
+      
+  
+    </script>
+ 
+  </body>
+</html>   
